@@ -1,0 +1,29 @@
+{%load static%}
+
+<html lang = "ja">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{% block title %}{% endblock %}</title>
+        <link rel = "stylesheet" href = "{%static 'css/common.css'%}">
+        {%block head%}{%endblock%}
+    </head>
+
+    <body>
+        <header>
+            <div class="title">
+                <div class="logo"></div>
+                <div class="service-name">
+                    <p>DevDiary</p>
+                </div>
+            </div>
+            <div class="nav">
+                <a>検索</a>
+                <a>いいね</a>
+                <a>マイページ</a>
+            </div>
+        </header>
+        {%block content%}{%endblock%}
+        <footer></footer>
+    </body>
+</html>
