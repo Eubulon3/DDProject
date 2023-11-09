@@ -9,48 +9,68 @@
 {% block content %}
 <div class="top">
     <h1>あなたの記録</h1>
-    <div class="details">
-        <div class="rec-num">
-            <h2>記録</h2>
-            <h2 >102</h2>
-        </div>
-        <div class="goods-num">
-            <h2>いいね</h2>
-            <h2>30</h2>
-        </div>
+    <div class="search">
+        <input type="text" class="textbox" placeholder="search ..."/>
+        <a class = "search-button">
+            <img src="{% static 'images/search_icon.svg' %}" alt="検索アイコン">
+        </a>
+    </div>
+    <a class="tag-head">
+        <p>tag</p>
+        <img src="{% static 'images/tag-icon-white.svg' %}" alt="">
+    </a>
+    <div class="tags">
+        <div class="tag"><p>JavaScript</p></div>
+        <div class="tag"><p>html</p></div>
+        <div class="tag"><p>lottie</p></div>
+        <div class="tag"><p>animation</p></div>
     </div>
 </div>
 
-<div class="recs">
-    <div class="rec">
-        <div class="deco"></div>
-        <div class="title">
-            <h2>LottieAnimationをjavascriptで制御する</h2>
-        </div>
-        <div class="tags">
-            <div class="tag"><p>JavaScript</p></div>
-            <div class="tag"><p>html</p></div>
-            <div class="tag"><p>lottie</p></div>
-            <div class="tag"><p>animation</p></div>
-        </div>
-        <div class="details">
-            <div class="good">
-                <img src="{% static 'images/good_icon.svg' %}" alt="いいねアイコン">
-                <div class="good-num">
-                    <p>13</p>
-                </div>
-            </div>
-            <div class="date">
-                <p>3ヶ月前</p>
-            </div>
+<div class="contents">
+    <a class="add-rec">
+        <img src="{% static 'images/plus_normal_white.svg' %}" alt="">
+        <p>記録を追加</p>
+    </a>
+    <div class="tip">
+        <p>3件ヒット</p>
+        <div class="sort">
+            <p>並べ替え</p>
+            <p class="emp">日付</p>
+            <a class="emp">▼</a>
         </div>
     </div>
-    <div class="rec"></div>
-    <div class="rec"></div>
-    <div class="rec"></div>
-    <div class="rec"></div>
-    <div class="rec"></div>
-    <div class="rec"></div>
-    <div class="rec"></div>
+    <div class="recs">
+        <div class="rec">
+            <div class="deco"></div>
+            <div class="title">
+                <h2>LottieAnimationをjavascriptで制御する</h2>
+            </div>
+            <div class="tags">
+                <div class="tag"><p>JavaScript</p></div>
+                <div class="tag"><p>html</p></div>
+                <div class="tag"><p>lottie</p></div>
+                <div class="tag"><p>animation</p></div>
+            </div>
+            <div class="details">
+                <div class="good">
+                    <img src="{% static 'images/good_icon.svg' %}" alt="いいねアイコン">
+                    <div class="good-num">
+                        <p>13</p>
+                    </div>
+                </div>
+                <div class="date">
+                    <p>3ヶ月前</p>
+                </div>
+            </div>
+        </div>
+        <div class="rec"></div>
+        <div class="rec"></div>
+        <div class="rec"></div>
+        <div class="rec"></div>
+        <div class="rec"></div>
+        <div class="rec"></div>
+        <div class="rec"></div>
+    </div>
 </div>
 {% endblock content %}
