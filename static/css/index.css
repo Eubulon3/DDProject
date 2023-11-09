@@ -58,7 +58,7 @@
     padding: 30px 20px;
 
     box-shadow: 5px 8px 23px 0px rgba(0, 0, 0, 0.09);
-    border-radius: 10px;
+    border-radius: 0 0 10px 10px;
 }
 
 .rec .deco{
@@ -111,6 +111,10 @@
     align-items: center;
     column-gap: 0.5rem;
     color: #e2d38d;
+}
+
+.rec .details .good img{
+    width: 1.5rem;
 }
 
 .rec .details .date{
