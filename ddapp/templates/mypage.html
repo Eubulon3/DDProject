@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{%load static%}
+
+{%block title%}マイページ{%endblock%}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/mypage.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="contents">
+    <div class="top-bg">
+        <img src="{% static 'images/avater_default.svg' %}" alt="" class = "avater">
+        <h2>山田太郎</h2>
+    </div>
+    <div class="column">
+        <a href = "{% url 'account_logout' %}">ログアウト</a>
+    </div>
+</div>
+{%endblock%}

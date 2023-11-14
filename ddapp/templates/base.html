@@ -14,13 +14,13 @@
             <div class="title">
                 <div class="logo"></div>
                 <div class="service-name">
-                    <p>DevDiary</p>
+                    <a href = "{% url 'ddapp:index' %}">DevDiary</a>
                 </div>
             </div>
             <div class="nav">
                 <a>検索</a>
                 <a>いいね</a>
-                <a>マイページ</a>
+                <a href = {% url 'ddapp:mypage' %}>マイページ</a>
             </div>
         </header>
         {%block content%}{%endblock%}
