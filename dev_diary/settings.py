@@ -121,8 +121,9 @@ AUTHENTICATION_BACKENDS = (
 ACCOUNT_AUTHENTICATION_METHOD = "email"
 ACCOUNT_USERNAME_REQUIRED = False
 
-# サインアップにメールアドレス確認を挟むように設定
+# サインアップにメールアドレス認証を必要としない
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+# ACCOUNT_EMAIL_VERIFICATION = "optional"
 ACCOUNT_EMAIL_REQUIRED = True
 
 # ログインログアウト時の遷移先
