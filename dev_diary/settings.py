@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     "ddapp.apps.DdappConfig",
     "accounts.apps.AccountsConfig",
     "django.contrib.sites",
+    "tinymce",
 ]
 
 MIDDLEWARE = [
@@ -114,3 +115,13 @@ ACCOUNT_LOGOUT_ON_GET = True
 
 
 SITE_ID = 1
+
+TINYMCE_DEFAULT_CONFIG = {
+    'selector': 'textarea',
+    'theme': 'modern',
+    'height': 360,
+    'width': 900,
+    'menubar': False,
+    'plugins': 'codesample',
+    'toolbar': 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | codesample',
+}

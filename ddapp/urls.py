@@ -6,4 +6,5 @@ urlpatterns = [
     path("", views.IndexView.as_view(), name = "index"),
     path("accounts/", include("accounts.urls")),
     path("mypage/", views.MypageView.as_view(), name = "mypage"),
+    path("post/", views.PostRecordView.as_view(), name = "post"),
 ]
