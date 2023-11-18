@@ -16,7 +16,7 @@ class MypageView(LoginRequiredMixin, generic.TemplateView):
 class PostRecordView(LoginRequiredMixin, generic.CreateView):
     model = Record
     template_name = "postrecord.html"
-    from_class = PostRecordForm
+    form_class = PostRecordForm
     success_url = reverse_lazy("ddapp:index")
 
     def form_valid(self, form):
