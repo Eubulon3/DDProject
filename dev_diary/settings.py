@@ -117,10 +117,10 @@ ACCOUNT_LOGOUT_ON_GET = True
 SITE_ID = 1
 
 TINYMCE_DEFAULT_CONFIG = {
-    'selector': 'textarea',
-    'theme': 'modern',
-    'height': 360,
-    'width': 900,
+    'content_css': '/path/to/your/custom.css',  # 行間のスタイルを設定したCSSファイルへのパス
+    'body_class': 'tinymce-body',  # ボディ要素に適用するクラス
+    'width': '100%', 
+    'height': "80vh",
     'menubar': False,
     'plugins': 'codesample',
     'toolbar': 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | codesample',
