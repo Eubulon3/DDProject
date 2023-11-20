@@ -9,8 +9,16 @@
 <h1 class = "new-record">新規記録</h1>
 <form action="" method="post">
     {% csrf_token %}
-    {{ form.title }}
-    {{ form.content }}
-    <input type="submit" value="作成">
+    {{ form.record_form.title }}
+    <div class="tag-container">
+        {{ form.tag_form.tag_01 }}
+        {{ form.tag_form.tag_02 }}
+        {{ form.tag_form.tag_03 }}
+        {{ form.tag_form.tag_04 }}
+    </div>
+    {{ form.record_form.content }}
+    <div class = "btn-add">
+        <input type="submit" value="作成">
+    </div>
 </form>
 {% endblock content %}

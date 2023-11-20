@@ -5,11 +5,62 @@
     width: fit-content;
 }
 
-textarea{
+#id_record_form-title{
     width: 100%;
 }
+
+#id_record_form-content{
+    width: 100%;
+}
+
+.tag-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.tag-container textarea{
+    width: 10%;
+    height: 50px;
+}
+
+.tag{
+    padding: 10px;
+    font-size: 17px;
+    line-height: 25px;
+}
+
 
 .record-title{
     font-size: 30px;
     padding: 15px;
+}
+
+.button-add{
+    position: fixed;
+    right: 100px;
+    bottom: 100px;
+}
+
+.btn-add{
+    display: block;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    padding: 1rem 25px;
+    border-radius: 7px;
+    border: none;
+    background-color: #e2d38d;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    appearance: none;
+}
+
+.btn-add input{
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    background: none;
+    color: #253453;
 }

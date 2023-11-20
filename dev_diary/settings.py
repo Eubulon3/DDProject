@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     "accounts.apps.AccountsConfig",
     "django.contrib.sites",
     "tinymce",
+    "betterforms",
 ]
 
 MIDDLEWARE = [

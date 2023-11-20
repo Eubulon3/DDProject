@@ -1,7 +1,7 @@
 from django.contrib import admin
 from tinymce.widgets import TinyMCE
 from django.db import models
-from .models import Record
+from .models import Record, Tag
 
 class RecordAdmin(admin.ModelAdmin):
     formfield_overrides = {
@@ -9,3 +9,4 @@ class RecordAdmin(admin.ModelAdmin):
     }
 
 admin.site.register(Record, RecordAdmin)
+admin.site.register(Tag)

@@ -4,7 +4,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.contrib import messages
 from .models import Record
-from .forms import PostRecordForm
+from .forms import RecordAndTagForm
 
 class IndexView(LoginRequiredMixin, generic.TemplateView):
     template_name = "index.html"
@@ -16,13 +16,17 @@ class MypageView(LoginRequiredMixin, generic.TemplateView):
 class PostRecordView(LoginRequiredMixin, generic.CreateView):
     model = Record
     template_name = "postrecord.html"
-    form_class = PostRecordForm
+    form_class = RecordAndTagForm
     success_url = reverse_lazy("ddapp:index")
 
     def form_valid(self, form):
-        record = form.save(commit=False)
+        record = form["record_form"].save(commit=False)
         record.user_record = self.request.user
         record.save()
+
+        tag = form["tag_form"].save(commit=False)
+        tag.tag_record = record
+        tag.save()
         messages.success(self.request, "post成功しました")
         return super().form_valid(form)
     
