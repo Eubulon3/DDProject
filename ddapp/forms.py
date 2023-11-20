@@ -7,9 +7,16 @@ class PostRecordForm(forms.ModelForm):
         model = Record
         fields = ("title", "content",)
         widgets = {
+            "title": forms.Textarea(attrs={
+                "class": "record-title",
+                "cols": 20,
+                "rows": 1,
+            }),
             "content": TinyMCE(attrs={
+                "class": "record-content",
                 "cols": 200,
-                "rows": 40
-            })
+                "rows": 40,
+            },
+            )
         }
 
