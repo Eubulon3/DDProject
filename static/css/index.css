@@ -109,11 +109,15 @@
 .recs{
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: left;
     margin-top: 10px;
 
-    column-gap: 10px;
+    column-gap: 30px;
     row-gap: 20px;
+}
+
+.recs a:link, .recs a:visited, .recs a:hover, .recs a:active {
+    color: #000;
 }
 
 .rec{
@@ -125,6 +129,7 @@
     box-shadow: 5px 8px 23px 0px rgba(0, 0, 0, 0.09);
     border-radius: 0 0 10px 10px;
 }
+
 
 .rec .deco{
     position: absolute;

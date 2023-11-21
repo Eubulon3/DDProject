@@ -19,7 +19,7 @@ class Tag(models.Model):
     tag_02 = models.CharField(max_length=20, verbose_name="タグ02", null=True, blank=True)
     tag_03 = models.CharField(max_length=20, verbose_name="タグ03", null=True, blank=True)
     tag_04 = models.CharField(max_length=20, verbose_name="タグ04", null=True, blank=True)
-    tag_record = models.ForeignKey(Record, on_delete=models.CASCADE, verbose_name = "レコード", null=True, blank=True)
+    tag_record = models.OneToOneField(Record, on_delete=models.CASCADE, verbose_name = "レコード", null=True, blank=True, related_name="tag")
 
     def __str__(self):
         return str(self.tag_record)

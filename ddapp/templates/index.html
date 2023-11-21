@@ -32,27 +32,36 @@
         <img src="{% static 'images/plus_normal_white.svg' %}" alt="">
         <p>記録を追加</p>
     </a>
-    <div class="tip">
+    <!-- <div class="tip">
         <p>3件ヒット</p>
         <div class="sort">
             <p>並べ替え</p>
             <p class="emp">日付</p>
             <a class="emp">▼</a>
         </div>
-    </div>
+    </div> -->
     <div class="recs">
-        <div class="rec">
+        {% for record in object_list %}
+        <a href="{% url 'ddapp:detail' record.id %}" class="rec">
             <div class="deco"></div>
             <div class="title">
-                <h2>LottieAnimationをjavascriptで制御する</h2>
+                <h2>{{record.title}}</h2>
             </div>
             <div class="tags">
-                <div class="tag"><p>JavaScript</p></div>
-                <div class="tag"><p>html</p></div>
-                <div class="tag"><p>lottie</p></div>
-                <div class="tag"><p>animation</p></div>
+                {% if record.tag.tag_01 is not None %}
+                <div class="tag"><p>{{ record.tag.tag_01 }}</p></div>
+                {% endif %}
+                {% if record.tag.tag_02 is not None %}
+                <div class="tag"><p>{{ record.tag.tag_02 }}</p></div>
+                {% endif %}
+                {% if record.tag.tag_03 is not None %}
+                <div class="tag"><p>{{ record.tag.tag_03 }}</p></div>
+                {% endif %}
+                {% if record.tag.tag_04 is not None %}
+                <div class="tag"><p>{{ record.tag.tag_04 }}</p></div>
+                {% endif %}
             </div>
-            <div class="details">
+            <!-- <div class="details">
                 <div class="good">
                     <img src="{% static 'images/good_icon.svg' %}" alt="いいねアイコン">
                     <div class="good-num">
@@ -62,15 +71,9 @@
                 <div class="date">
                     <p>3ヶ月前</p>
                 </div>
-            </div>
-        </div>
-        <div class="rec"></div>
-        <div class="rec"></div>
-        <div class="rec"></div>
-        <div class="rec"></div>
-        <div class="rec"></div>
-        <div class="rec"></div>
-        <div class="rec"></div>
+            </div> -->
+        </a>
+        {% endfor %}
     </div>
 </div>
 {% endblock content %}
