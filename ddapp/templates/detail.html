@@ -6,6 +6,26 @@
 {% endblock head %}
 
 {% block content %}
-<h1 class = "detail-title">{{ record.title }}</h1>
+<div class="detail">
+    <h1 class = "title">{{ record.title }}</h1>
+    <div class="tags">
+        {% if record.tag.tag_01 is not None %}
+        <div class="tag"><p>{{ record.tag.tag_01 }}</p></div>
+        {% endif %}
+        {% if record.tag.tag_02 is not None %}
+        <div class="tag"><p>{{ record.tag.tag_02 }}</p></div>
+        {% endif %}
+        {% if record.tag.tag_03 is not None %}
+        <div class="tag"><p>{{ record.tag.tag_03 }}</p></div>
+        {% endif %}
+        {% if record.tag.tag_04 is not None %}
+        <div class="tag"><p>{{ record.tag.tag_04 }}</p></div>
+        {% endif %}
+    </div>
+    <div class="content">
+        {{ record.content|safe }}
+    </div>
+</div>
+
 
 {% endblock content %}
