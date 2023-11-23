@@ -7,11 +7,13 @@
 <link rel="stylesheet" href="{% static 'css/mypage.css' %}">
 {% endblock %}
 
+{% block active_mypage %}active{% endblock active_mypage %}
+
 {% block content %}
 <div class="contents">
     <div class="top-bg">
         <img src="{% static 'images/avater_default.svg' %}" alt="" class = "avater">
-        <h2>山田太郎</h2>
+        <h2>{{ user.username }}</h2>
     </div>
     <div class="column">
         <a href = "{% url 'accounts:logout' %}">ログアウト</a>

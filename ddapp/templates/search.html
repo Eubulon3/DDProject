@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block title %}検索{% endblock title %}
+
+{% block active_search %}active{% endblock active_search %}
+
 {%block head%}
 <link rel="stylesheet" href="{%static 'css/index.css'%}">
 {%endblock%}
@@ -8,9 +12,9 @@
 
 {% block content %}
 <div class="top">
-    <h1>あなたの記録</h1>
+    <h1>検索</h1>
     <div class="search">
-        <form action = "{% url 'ddapp:index' %}" method="get">
+        <form action = "{% url 'ddapp:search' %}" method="get">
             <input name = "search" type="text" class="textbox" placeholder="search ..."/>
             <input type="submit" class = "submit" value="検索">
         </form>
@@ -30,10 +34,6 @@
 </div>
 
 <div class="contents">
-    <a class="add-rec" href = "{% url 'ddapp:post' %}">
-        <img src="{% static 'images/plus_normal_white.svg' %}" alt="">
-        <p>記録を追加</p>
-    </a>
     <!-- <div class="tip">
         <p>3件ヒット</p>
         <div class="sort">

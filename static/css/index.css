@@ -20,19 +20,8 @@
     gap: 10px;
 }
 
-.top .search-button{
-    background-color: #e2d38d;
-    border-radius: 10px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 1%;
-}
-
-.top .textbox {
-    width: 35%;
+.top .search input {
     padding: 8px 10px;
     border: 1px solid #969da3;
     border-radius: 3px;
@@ -40,6 +29,15 @@
     font-size: 1em;
     line-height: 1.5;
 }
+
+.top .search .textbox {
+    width: 500px;
+}
+
+.top .search .submit {
+    background: #e2d38d;
+}
+
 
 .top .textbox::placeholder {
     color: #999;
@@ -125,6 +123,7 @@
     width: 23%;
     background-color: #fff;
     padding: 30px 20px;
+    margin-top: 30px;
 
     box-shadow: 5px 8px 23px 0px rgba(0, 0, 0, 0.09);
     border-radius: 0 0 10px 10px;

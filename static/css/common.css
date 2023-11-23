@@ -64,3 +64,11 @@ header .service-name{
 
     column-gap: 100px;
 }
+
+.nav a{
+    color: #aaa;
+}
+
+.nav .active{
+    color: #fff;
+}

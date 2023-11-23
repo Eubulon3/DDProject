@@ -20,9 +20,9 @@
                 </div>
             </div>
             <div class="nav">
-                <a>検索</a>
-                <a>いいね</a>
-                <a href = {% url 'ddapp:mypage' %}>マイページ</a>
+                <a class = "{% block active_search %}{% endblock active_search %}" href = "{% url "ddapp:search" %}">検索</a>
+                <a class = "{% block active_good %}{% endblock active_good %}">いいね</a>
+                <a class = "{% block active_mypage %}{% endblock active_mypage %}" href = {% url 'ddapp:mypage' %}>マイページ</a>
             </div>
         </header>
         {%block content%}{%endblock%}

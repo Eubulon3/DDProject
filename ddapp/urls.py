@@ -7,5 +7,6 @@ urlpatterns = [
     path("accounts/", include("accounts.urls")),
     path("mypage/", views.MypageView.as_view(), name = "mypage"),
     path("post/", views.PostRecordView.as_view(), name = "post"),
-    path("detailrecord/<int:id>/", views.DetailRecordView.as_view(), name = "detail")
+    path("detailrecord/<int:id>/", views.DetailRecordView.as_view(), name = "detail"),
+    path("search/", views.SearchRecordView.as_view(), name = "search"),
 ]
