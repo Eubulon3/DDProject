@@ -1,3 +1,4 @@
+from typing import Any
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -6,8 +7,30 @@ from django.contrib import messages
 from django.http import JsonResponse
 from django.db.models import Q
 from django.conf import settings
-from .models import Record, Tag
+from .models import Record, Tag, Like
 from .forms import RecordAndTagForm
+
+
+def like_view(request):
+    record_id = request.POST.get("record_id")
+    context = {
+        "user": f"request.user",
+    }
+    record = get_object_or_404(Record, id=record_id)
+    like = Like.objects.filter(like_user = request.user, like_record = record)
+
+    if like.exists():
+        like.delete()
+        context["method"] = "delete"
+    else:
+        like.create(like_record = record, like_user = request.user)
+        context["method"] = "create"
+    
+    context["like_count"] = record.like_set.count()
+
+    return JsonResponse(context)
+
+
 
 class IndexView(LoginRequiredMixin, generic.ListView):
     model = Record
@@ -24,6 +47,7 @@ class IndexView(LoginRequiredMixin, generic.ListView):
             )
 
         return records
+    
 
 
 class MypageView(LoginRequiredMixin, generic.TemplateView):
@@ -51,6 +75,9 @@ class PostRecordView(LoginRequiredMixin, generic.CreateView):
         tag = form["tag_form"].save(commit=False)
         tag.tag_record = record
         tag.save()
+
+        like = Like.objects.create(like_record=record, like_user=self.request.user)
+
         messages.success(self.request, "post成功しました")
         return super().form_valid(form)
     
@@ -62,6 +89,20 @@ class DetailRecordView(LoginRequiredMixin, generic.DetailView):
     model = Record
     template_name = "detail.html"
     pk_url_kwarg = "id"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        like_count = self.object.like_set.count()
+
+        context["like_count"] = like_count
+
+        if self.object.like_set.filter(like_user = self.request.user).exists():
+            context["like"] = True
+        else:
+            context["like"] = False
+
+        return context
 
 
 class SearchRecordView(LoginRequiredMixin, generic.ListView):

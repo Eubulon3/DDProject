@@ -7,7 +7,24 @@
 
 {% block content %}
 <div class="detail">
-    <h1 class = "title">{{ record.title }}</h1>
+    <div class="head-contents">
+        <h1 class = "title">{{ record.title }}</h1>
+        <div class = "tip">
+            <div class="like">
+                {% if like %}
+                <button type="button" id="ajax-like-post">
+                    <div class = "fas" id = "like-icon"></div>
+                </button>
+                {% else %}
+                    <button type="button" id="ajax-like-post">
+                        <div class = "far" id = "like-icon"></div>
+                    </button>
+                {% endif %}
+                <p id="like-count">{{ like_count }}</p>
+            </div>
+            <p class = "date">{{ record.created_at }}</p>
+        </div>
+    </div>
     <div class="tags">
         {% if record.tag.tag_01 is not None %}
         <div class="tag"><p>{{ record.tag.tag_01 }}</p></div>
@@ -29,3 +46,41 @@
 
 
 {% endblock content %}
+
+{% block js %}
+
+<script type="text/javascript">
+
+    document.getElementById("ajax-like-post").addEventListener("click", e =>{
+        e.preventDefault();
+        const url = "{% url 'ddapp:like' %}";
+        fetch(url, {
+            method: "POST",
+            body: "record_id={{ record.id }}",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded; charset=utf-8",
+                "X-CSRFToken": "{{ csrf_token }}",
+            },
+        }).then(response => {
+            return response.json();
+        }).then(response => {
+            const counter = document.getElementById("like-count");
+            counter.textContent = response.like_count;
+            const icon = document.getElementById("like-icon");
+
+            if (response.method == "create"){
+                icon.classList.remove("far");
+                icon.classList.add("fas");
+                icon.id = "like-icon"
+            } else {
+                icon.classList.remove("fas");
+                icon.classList.add("far");
+                icon.id = "like-icon"
+            }
+        }).catch(error => {
+            console.error(error);
+        });
+    });
+</script>
+
+{% endblock js %}

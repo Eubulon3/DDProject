@@ -23,3 +23,11 @@ class Tag(models.Model):
 
     def __str__(self):
         return str(self.tag_record)
+
+class Like(models.Model):
+    like = models.BooleanField(verbose_name="いいね", null=True, blank=True, default=False)
+    like_record = models.ForeignKey(Record, verbose_name="レコード", on_delete=models.CASCADE)
+    like_user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name="ユーザー")
+
+    def __str__(self):
+        return str(self.like_user) + ": " + str(self.like_record)

@@ -2,10 +2,27 @@
     padding: 0 10% 5% 10%;
 }
 
-.detail .title{
+.detail .head-contents{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.detail .head-contents .title{
     margin-top: 5%;
     text-align: left;
 }
+
+.detail .head-contents .tip{
+    margin-top: 5%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+
 
 .detail .content{
     margin-top: 50px;
@@ -31,4 +48,29 @@
     padding: 0.5rem 1rem;
     border-radius: 10px;
     color: #566f98;
+}
+
+.tip .like{
+    display: flex;
+
+    gap: 10px;
+}
+
+.tip button{
+    border: none;
+}
+
+.fas{
+    width: 20px;
+    height: 20px;
+    background-image: url("../images/like_icon_fas.svg");
+    background-size: cover;
+    background-position: center;
+}
+.far{
+    width: 20px;
+    height: 20px;
+    background-image: url("../images/like_icon_far.svg");
+    background-size: cover;
+    background-position: center;
 }
