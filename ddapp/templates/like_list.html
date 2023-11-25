@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{%load static%}
+
+{%block title%}いいね{%endblock%}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/like_list.css' %}">
+{% endblock %}
+
+{% block active_good %}active{% endblock active_good %}
+
+{% block content %}
+<div class="contents">
+    <div class="recs">
+        {% for record in object_list %}
+        <a href="{% url 'ddapp:detail' record.id %}" class="rec">
+            <div class="deco"></div>
+            <div class="title">
+                <h2>{{record.like_record.title}}</h2>
+            </div>
+            <div class="tags">
+                {% if record.like_record.tag.tag_01 is not None %}
+                <div class="tag"><p>{{ record.like_record.tag.tag_01 }}</p></div>
+                {% endif %}
+                {% if record.like_record.tag.tag_02 is not None %}
+                <div class="tag"><p>{{ record.like_record.tag.tag_02 }}</p></div>
+                {% endif %}
+                {% if record.like_record.tag.tag_03 is not None %}
+                <div class="tag"><p>{{ record.like_record.tag.tag_03 }}</p></div>
+                {% endif %}
+                {% if record.like_record.tag.tag_04 is not None %}
+                <div class="tag"><p>{{ record.like_record.tag.tag_04 }}</p></div>
+                {% endif %}
+            </div>
+            <div class="tip">
+                <div class="like">
+                    <img src="{% static 'images/like_icon_fas.svg' %}" alt="いいねアイコン">
+                    <div class="good-num">
+                        <p>{{ record.like_record.like_set.count }}</p>
+                    </div>
+                </div>
+                <div class="date">
+                    <p>{{ record.like_record.created_at }}</p>
+                </div>
+            </div>
+            <!-- <div class="details">
+                <div class="good">
+                    <img src="{% static 'images/good_icon.svg' %}" alt="いいねアイコン">
+                    <div class="good-num">
+                        <p>13</p>
+                    </div>
+                </div>
+                <div class="date">
+                    <p>3ヶ月前</p>
+                </div>
+            </div> -->
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{%endblock%}
+
+

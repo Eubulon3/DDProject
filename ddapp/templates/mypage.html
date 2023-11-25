@@ -16,7 +16,24 @@
         <h2>{{ user.username }}</h2>
     </div>
     <div class="column">
-        <a href = "{% url 'accounts:logout' %}">ログアウト</a>
+        <div class="count">
+            <div class="like-count">
+                <p class="count">{{ like_count }}</p>
+                <p class="text">いいね</p>
+            </div>
+            <div class="record-count">
+                <p class="count">{{ record_count }}</p>
+                <p class="text">記録数</p>
+            </div>
+        </div>
+        <hr>
+        <div class="rank">
+            <p class="count">{{ rank }}</p>
+            <p class="text">熟練度</p>
+        </div>
+        <a href = "{% url 'accounts:logout' %}" class="logout">ログアウト</a>
     </div>
 </div>
 {%endblock%}
+
+

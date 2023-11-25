@@ -27,7 +27,8 @@ class Tag(models.Model):
 class Like(models.Model):
     like = models.BooleanField(verbose_name="いいね", null=True, blank=True, default=False)
     like_record = models.ForeignKey(Record, verbose_name="レコード", on_delete=models.CASCADE)
-    like_user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name="ユーザー")
+    like_from_user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name="from", related_name="from_user", blank=True, null=True)
+    like_to_user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name="to", related_name="to_user", blank=True, null=True)
 
     def __str__(self):
-        return str(self.like_user) + ": " + str(self.like_record)
+        return "from " + str(self.like_from_user) + " to " + str(self.like_to_user) + ": " + str(self.like_record)
