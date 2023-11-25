@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{%load static%}
+
+{%block title%}トレンド{%endblock%}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/trend.css' %}">
+{% endblock %}
+
+{% block active_trend %}active{% endblock active_trend %}
+
+{% block content %}
+<h1 class = "trend-head">トレンド</h1>
+<div class="chart">
+    <img src="{% static "images/language.png" %}" alt="利用言語・フレームワーク" class = "language">
+    <img src="{% static "images/security.png" %}" alt="セキュリティ脆弱性" class = "security">
+    <img src="{% static "images/stuck.png" %}" alt="技術スタック" class = "stuck">
+    <img src="{% static "images/dev_env.png" %}" alt="開発環境" class = "dev-env">
+    <img src="{% static "images/error_type.png" %}" alt="エラータイプ" class = "error-type">
+    <img src="{% static "images/cloud.png" %}" alt="クラウドプロバイダの使用率" class = "cloud">
+</div>
+{%endblock%}

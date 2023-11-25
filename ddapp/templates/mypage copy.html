@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{%load static%}
+
+{%block title%}マイページ{%endblock%}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/mypage.css' %}">
+{% endblock %}
+
+{% block active_mypage %}active{% endblock active_mypage %}
+
+{% block content %}
+<div class="contents">
+    <div class="top-bg">
+        <img src="{% static 'images/avater_default.svg' %}" alt="" class = "avater">
+        <h2>{{ user.username }}</h2>
+    </div>
+    <div class="column">
+        <div class="count">
+            <div class="like-count">
+                <p class="count">{{ like_count }}</p>
+                <p class="text">いいね</p>
+            </div>
+            <div class="record-count">
+                <p class="count">{{ record_count }}</p>
+                <p class="text">記録数</p>
+            </div>
+        </div>
+        <hr>
+        <div class="rank">
+            <p class="count">{{ rank }}</p>
+            <p class="text">熟練度</p>
+        </div>
+        <a href = "{% url 'accounts:logout' %}" class="logout">ログアウト</a>
+    </div>
+</div>
+{%endblock%}
+
+

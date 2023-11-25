@@ -152,3 +152,6 @@ class LikeListView(LoginRequiredMixin, generic.ListView):
         like_records = Like.objects.filter(like_from_user = self.request.user)
         return like_records
 
+
+class TrendView(LoginRequiredMixin, generic.TemplateView):
+    template_name = "trend.html"

@@ -1,0 +1,34 @@
+.trend-head{
+    padding: 2.5% 4.5% 2.5% 4.5%;
+    text-align: left;
+}
+
+.chart{
+    padding: 0 10% 10% 10%;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.language{
+    width: 35%;
+}
+
+.security{
+    width: 65%;
+}
+
+.stuck{
+    width: 33%;
+}
+
+.dev-env{
+    width: 33%;
+}
+
+.error-type{
+    width: 33%;
+}
+
+.cloud{
+    width: 33%;
+}
