@@ -58,7 +58,7 @@ class MypageView(LoginRequiredMixin, generic.TemplateView):
     def calc_rank(self, count):
         rank = ["A", "B", "C", "D", "E"]
 
-        if 0 < count <= 3:
+        if 0 <= count <= 3:
             n = 4
         elif 3 < count <= 12:
             n = 3
