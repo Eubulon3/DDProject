@@ -12,7 +12,7 @@ class PostRecordForm(forms.ModelForm):
                 "class": "record-title",
                 "cols": 20,
                 "rows": 1,
-                "placeholder": "タイトル",
+                "placeholder": "タイトルを入力してください",
             }),
             "content": TinyMCE(attrs={
                 "class": "record-content",
