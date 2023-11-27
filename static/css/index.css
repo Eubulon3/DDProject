@@ -89,7 +89,7 @@
 .recs{
     display: flex;
     flex-flow: row wrap;
-    justify-content: left;
+    justify-content: center;
     margin-top: 10px;
 
     column-gap: 30px;
@@ -185,4 +185,39 @@
     background-image: url("../images/like_icon_far.svg");
     background-size: cover;
     background-position: center;
+}
+
+@media screen and (max-width: 1000px){
+    .top{
+        padding: 2% 4% 2% 4%;
+    }
+    .top h1{
+        font-size: 17px;
+    }
+    .top .search input {
+        padding: 4px 5px;
+    }
+    .add-rec{
+        width: fit-content;
+        padding: 0.5rem 1rem;
+        margin-top: 2%;
+        gap: 10px;
+    }
+    .recs{
+        margin-top: 5px;
+    
+        column-gap: 15px;
+        row-gap: 10px;
+    }
+    .rec{
+        width: 45%;
+        background-color: #fff;
+        padding: 30px 20px;
+        margin-top: 30px;
+        padding-bottom: 7%;
+    
+        box-shadow: 5px 8px 23px 0px rgba(0, 0, 0, 0.09);
+        border-radius: 0 0 10px 10px;
+    }
+
 }

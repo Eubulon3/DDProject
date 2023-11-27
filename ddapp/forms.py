@@ -12,6 +12,7 @@ class PostRecordForm(forms.ModelForm):
                 "class": "record-title",
                 "cols": 20,
                 "rows": 1,
+                "placeholder": "タイトル",
             }),
             "content": TinyMCE(attrs={
                 "class": "record-content",
@@ -27,16 +28,20 @@ class TagForm(forms.ModelForm):
         fields = ("tag_01", "tag_02", "tag_03", "tag_04",)
         widgets = {
             "tag_01": forms.Textarea(attrs={
-                "class": "tag"
+                "class": "tag",
+                "placeholder": "tag1",
             }),
             "tag_02": forms.Textarea(attrs={
-                "class": "tag"
+                "class": "tag",
+                "placeholder": "tag2",
             }),
             "tag_03": forms.Textarea(attrs={
-                "class": "tag"
+                "class": "tag",
+                "placeholder": "tag3",
             }),
             "tag_04": forms.Textarea(attrs={
-                "class": "tag"
+                "class": "tag",
+                "placeholder": "tag4",
             }),
         }
 

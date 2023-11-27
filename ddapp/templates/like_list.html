@@ -11,6 +11,7 @@
 
 {% block content %}
 <div class="contents">
+    <h1>いいね</h1>
     <div class="recs">
         {% for record in object_list %}
         <a href="{% url 'ddapp:detail' record.id %}" class="rec">

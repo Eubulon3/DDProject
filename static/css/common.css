@@ -72,3 +72,34 @@ header .service-name{
 .nav .active{
     color: #fff;
 }
+
+
+@media screen and (max-width: 1000px) {
+    h1{
+        font-size: 22px;
+    }
+    h2{
+        font-size: 17px;
+    }
+    header{
+        height: 50px;
+    }
+    header .title{
+        column-gap: 10px;
+    }
+    header .logo{
+        width: 30px;
+        height: 30px;
+    }
+    header .service-name{
+        font-size: 20px;
+    }
+    .nav{
+        column-gap: 70px;
+    }
+    .nav a{
+        font-size: 15px;
+    }
+
+    
+}
